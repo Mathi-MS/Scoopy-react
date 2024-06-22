@@ -1,13 +1,213 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+	font-family: Poppins-Bold;
+	src: url('../src/Assests/Font/Poppins-Bold.ttf')
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+	font-family: Poppins-SemiBold;
+	src: url('../src/Assests/Font/Poppins-SemiBold.ttf')
+}
+
+@font-face {
+	font-family: Poppins-Regular;
+	src: url('../src/Assests/Font/Poppins-Regular.ttf')
+}
+
+@font-face {
+	font-family: Poppins-Medium;
+	src: url('../src/Assests/Font/Poppins-Medium.ttf')
+}
+
+@font-face {
+	font-family: Poppins-Light;
+	src: url('../src/Assests/Font/Poppins-Light.ttf')
+}
+
+@font-face {
+	font-family:recoleta;
+	src: url('../src/Assests/Font/recoleta-regulardemo.otf')
+}
+body{
+    margin: auto !important;
+    max-width: 1600px; 
+}
+
+/* -Navbar  */
+
+#navbar .nav__links a::after{
+    content: '';
+    width:0%;
+    height: 3px;
+    background-color: #fe831d;
+    display: inline-block;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: -5px;
+    transition: .5s;
+}
+#navbar .nav__link:hover{
+    a::after{
+        width:100%;
+    }
+    a{
+        color: #fe831d;
+    }
+}
+#navbar .nav__link.active{
+    a::after{
+        width:100%;
+    }
+    a{
+        color: #fe831d;
+    }
+}
+/* Banner  */
+#banner .anime{
+    animation: .5s linear  smallbigger;
+}
+/* -flavours  */
+#flavours .owl-theme .owl-next{
+    font-size:20px;
+    color:#f8edd1;
+    background-color:#7B4B41;
+    width:35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 2px #7B4B41;
+    transition: .5s;
+    border-radius: 200px;
+}
+#flavours .owl-theme .owl-prev{
+    font-size:20px;
+    color:#f8edd1;
+    background-color:#7B4B41;
+    width:35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 2px #7B4B41;
+    transition: .5s;
+    border-radius: 200px;
+}
+#flavours .owl-theme .owl-prev:hover{
+    background-color:transparent;
+    color:#7B4B41;
+}
+#flavours .owl-theme .owl-next:hover{
+    background-color:transparent;
+    color:#7B4B41;
+}
+#flavours .owl-nav{
+    display: flex;
+}
+/* -categories-  */
+#categories .owl-theme .owl-dots .owl-dot span {
+    width: 15px;
+    height: 15px;
+    margin:0px;
+    background:#725d6893;
+    display: block;
+    transition: opacity .2s ease;
+    border-radius: 30px;
+}
+#categories .owl-theme .owl-dots .active span {
+    background:#725D68;
+}
+#categories .owl-theme .owl-dots{
+    gap: 5px;
+    justify-content: center;
+    display: flex;
+    margin-top: 20px;
+    display: none;
+}
+#categories .item {
+    width: max-content;
+    margin: auto;
+}
+#categories .item {
+    width:100%;
+    height: 200px;
+    margin-top:0px;
+}
+
+#categories .owl-item {
+    transform:scale(0.8);
+}
+#categories .center {
+    transform:scale(1);
+}
+#categories .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+#categories .owl-theme .owl-next{
+    font-size:20px;
+    color:#f8edd1;
+    background-color:#7B4B41;
+    width:35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 2px #7B4B41;
+    transition: .5s;
+    border-radius: 200px;
+}
+#categories .owl-theme .owl-prev{
+    font-size:20px;
+    color:#f8edd1;
+    background-color:#7B4B41;
+    width:35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 2px #7B4B41;
+    transition: .5s;
+    border-radius: 200px;
+}
+#categories .owl-theme .owl-prev:hover{
+    background-color:transparent;
+    color:#7B4B41;
+}
+#categories .owl-theme .owl-next:hover{
+    background-color:transparent;
+    color:#7B4B41;
+}
+#categories .owl-nav{
+    display: flex;
+    justify-content: center;
+}
+@keyframes smallbigger {
+    0%{
+        transform: scale(0.8);
+        opacity: .5;
+        transform: translateX(200%) translateY(200%);
+    }
+    70%{
+        transform: translateX(90%) translateY(60%);
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+        transform: translateX(0px) translateY(0px);
+    }
+}
+
+@media(max-width:639px){
+    #categories .item {
+        width:300px;
+        height: 300px;
+        margin-top:0px;
+    }
 }
